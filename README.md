@@ -1,1 +1,1 @@
-Just a simple repository where I drop off examples, that I've encountered during my time on Learncpp.com 
+Just a simple repository where I drop off examples, that I've encountered during my time on Learncpp.com. The examples might range from being easy to being somewhat difficult. The main goal of these examples (and the whole thing of restudying things on learncpp) is to pick up the best practices in programming which might help me out in the near future
