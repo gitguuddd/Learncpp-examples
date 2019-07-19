@@ -8,8 +8,10 @@ int main() {
     std::cin>>name;
     bool contains(false);
     for(auto const& names:array){
-        if(names==name)
-            contains=true;}
+        if(names==name){
+            contains=true;
+            break;}
+    }
     if(contains)
         std::cout<<name<<" was found.\n";
     else
