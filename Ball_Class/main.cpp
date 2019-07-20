@@ -2,16 +2,18 @@
 #include <string>
 class Ball{
 private:
-    std::string m_color;
-    double m_radius;
+    std::string m_color="black";
+    double m_radius=10.0;
 public:
-    explicit Ball(double r){
-        m_color="black";
-        m_radius=r;
+    explicit Ball()=default;
+
+    explicit Ball(std::string c, double r):m_color{c},m_radius{r}{
     }
-    explicit Ball(std::string c="black", double r=10.0){
-        m_color=c;
-        m_radius=r;
+    explicit Ball(std::string c):m_color{c}{
+
+    }
+    explicit Ball(double r):m_radius{r}{
+
     }
     void print(){
         std::cout<<"color: "<<m_color<<", radius: "<<m_radius<<"\n";
