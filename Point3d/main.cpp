@@ -14,10 +14,8 @@ public:
         std::cout<<"<"<<m_x<<", "<<m_y<<", "<<m_z<<">\n";
     }
     bool isEqual(Point3d &p){
-        if(m_x==p.m_x&&m_y==p.m_y&&m_z==p.m_z)
-            return true;
-        else
-            return false;
+        return(m_x==p.m_x&&m_y==p.m_y&&m_z==p.m_z);
+
     }
 };
 int main() {
@@ -39,5 +37,5 @@ if (point1.isEqual(point3))
     std::cout<<"point1 and point3 are equal\n";
 else
     std::cout<<"point1 and point3 are not equal\n";
-    return 0;
+return 0;
 }
