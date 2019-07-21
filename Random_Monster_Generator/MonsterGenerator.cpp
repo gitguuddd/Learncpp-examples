@@ -4,13 +4,9 @@
 
 #include "MonsterGenerator.h"
 #include "Monster.h"
-#include <chrono>
-#include <random>
 int MonsterGenerator::getRandomNumber(int min, int max){
-auto seed=std::chrono::high_resolution_clock::now().time_since_epoch().count();
-std::uniform_int_distribution<int> dist (min,max);
-std::mt19937 rd(seed);
-return dist(rd);
+    static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0);
+    return static_cast<int>(rand() * fraction * (max - min + 1) + min);
 }
 Monster MonsterGenerator::generateMonster() {
     int randType=getRandomNumber(0,Monster::MAX_MONSTER_TYPES-1);

@@ -4,7 +4,7 @@
 
 #ifndef RANDOM_MONSTER_GENERATOR_MONSTERGENERATOR_H
 #define RANDOM_MONSTER_GENERATOR_MONSTERGENERATOR_H
-
+#include <cstdlib>
 class Monster;
 
 class MonsterGenerator {
