@@ -5,20 +5,23 @@
 #ifndef OVERLOADED_OPS_1_FRACTION_H
 #define OVERLOADED_OPS_1_FRACTION_H
 #include <iostream>
+#include <cassert>
 
 class Fraction {
 private:
     int m_num;
     int m_denom;
 public:
-    int gcd(int a, int b);
+    static int gcd(int a, int b);
     void reduce();
-    Fraction(int x, int y):m_num(x),m_denom(y)
-    {reduce();}
-    void print();
+    explicit Fraction(int x=0, int y=1):m_num(x),m_denom(y)
+    {   assert(y!=0&&"Denominator cannot be 0");
+        reduce();}
     friend Fraction operator*(const Fraction &f1, const Fraction &f2);
     friend Fraction operator*(int value, const Fraction &f);
     friend Fraction operator*(const Fraction &f, int value);
+    friend std::ostream& operator<<(std::ostream &out, const Fraction &f);
+    friend std::istream& operator>>(std::istream &in,  Fraction &f);
 };
 
 
