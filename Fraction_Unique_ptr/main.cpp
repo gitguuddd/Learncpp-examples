@@ -2,7 +2,7 @@
 #include <memory>
 
 
-void printFraction(std::unique_ptr<Fraction> ptr)
+void printFraction(const Fraction* const ptr)
 {
     if (ptr)
         std::cout << *ptr;
@@ -11,7 +11,7 @@ void printFraction(std::unique_ptr<Fraction> ptr)
 int main()
 {
     auto ptr = std::make_unique<Fraction>(3,5);
-    printFraction(std::move(ptr));
+    printFraction(ptr.get());
 
 
     return 0;
